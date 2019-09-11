@@ -1,0 +1,253 @@
+/*Color Palette*
+#CACACA - pastel grey
+#1A3A9F - egyptian blue
+#ED4A55 - desire
+#E12437 - rose madder
+#001B76 - dark imperial blue
+/
+
+
+/*Global Styles
+--------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+A {text-decoration: none;
+    color: #FC2121;} 
+
+
+html, body{
+    margin:0px;
+	padding:2px;
+    height: 100%;
+}
+h1 {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 80px;
+    margin-top: 50px;
+    font-weight: 600;
+    text-align: center;
+    color: black;
+    
+}
+h2 {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 35px;
+    margin-top: 0;
+    margin-right: 200px;
+    color: white;
+    float: right;
+    display: inline-block;
+}
+/* must declare 0 margins on everything */
+
+html, body, #wrap {height: 100%; margin:0; padding:0;}
+
+body > #wrap {height: auto; min-height: 100%;}
+
+#main {padding-bottom: 150px;}  /* must be same height as the footer */
+
+#footer {position: relative;
+	margin-top: -50px; /* negative value of footer height */
+    margin-right: 10px;
+	height: 50px;
+	clear:both;
+    color:#001B76;
+    font-size: 20px;
+} 
+
+/* CLEAR FIX*/
+.clearfix:after {content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;}
+.clearfix {display: inline-block;}
+* html .clearfix { height: 1%;}
+.clearfix {display: block;}
+
+/*Sidebar button
+--------------------------------------------*/
+#sidebar{
+    background:whitesmoke;
+    width:180px;
+    height:100%
+    display: block;
+    position: absolute;
+    left: -180px;
+    top: 0px;
+    transition: left 0.3s linear;
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 25
+}
+
+#sidebar.visible{
+    left:0;
+    transition: left 0.3s linear;
+}
+
+
+ul{
+    margin:0px;
+    padding:0px;
+}
+
+ul li{
+    list-style: none;
+}
+
+ul li a{
+    color:#001B76;
+    display: block;
+    width: 180px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+#sidebar-btn{
+    display:inline-block;
+    vertical-align: middle;
+    width: 30px;
+    height:15px;
+    cursor: pointer;
+    margin: 20px;
+    position: absolute;
+    top: 0px;
+    right: -60px;
+}
+#sidebar-btn span{
+    height:3px;
+    background: #40C8F9;
+    margin-bottom: 5px;
+    display: block
+    
+}
+/*body
+-------------------------------------------------*/
+h1 {
+    text-align: center
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 50
+}
+
+/*tabs
+--------------------------------------------------*/
+aside {
+	padding: 1em;
+	background:rgb(83, 104, 138);
+	color: white;
+	margin-bottom: 1em;
+    margin-right: 1em;
+}
+aside h4 {
+	color: white;
+}
+/*tab styles*/
+aside.languages {
+	font: .8em 'Source+Serif+Pro', serif;
+	background:#2e2e2e;
+	padding: 15px;
+	padding-top: 1em;
+	float: right;
+	width: auto;
+	margin-left: 1em;
+}
+.languages h3 {
+	font-weight: normal;
+	color: white;
+	font-size: 1.6em;
+	margin-bottom:.5em;
+}
+
+#tabContainer h4 {
+	color: black;
+	font-size: 2em;
+    text-decoration: none;
+}
+#tabContainer h5 {
+	color: black;
+	font-size: 1.6em;
+}
+#tabs{
+	height:3em;
+    width:auto;
+	overflow:hidden;
+    padding: 5px;
+}
+
+#tabs > ul{
+	font: 1px;
+	list-style:none;
+}
+#tabs ul, #tabs li {
+	margin:0;
+	padding:0;
+}
+li {
+    width: 3.5em;
+    
+}
+#tabs > ul > li{
+	margin:0 2px 0 0;
+    margin-bottom: 0;
+	padding:2px 2px;
+	display:block;
+	float:left;
+	color:#FFF;
+	border-top-left-radius:4px;
+	border-top-right-radius: 4px;
+	background: #CCC;
+}
+
+#tabs > ul > li:hover{
+	background: white; 
+	cursor:pointer;
+}
+
+#tabs > ul > .active{
+	background: white; /* old browsers */
+	cursor:pointer;
+}
+
+#containers div {
+	background: white;
+	padding:5px 5px 10px;
+	margin:0;
+	color:#333;
+}
+#tabs a {
+	text-decoration: none;
+	color: black;
+}
+.pic {
+    margin-left: 3px;
+    border: 3 solid black;
+}
+
+/*Footer content
+-----------------------------------------------*/
+.content-wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px;
+    overflow: auto;
+}
+
+}
+.footer {
+    
+    color:#001B76;
+    font-size: 10px;
+/*    text-align: right;*/
+    text-decoration: none;
+}
+.flight {
+    float:right
+}
+
+.airbnb-embed-frame {
+    float: left;
+}
+

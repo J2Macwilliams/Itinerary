@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Provence</title>
+    <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative|Source+Serif+Pro" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css" >
+    <style>
+    html{
+            background: url(img/Provence.jpg)no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        
+    </style>
+    
+    
+</head>
+<body> 
+    <h1>Provence</h1>
+        <div id="sidebar">     
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Paris.html">Paris</a></li>
+			<li><a href="Turin.html">Turin</a></li>
+			<li><a href="Piemonte.html">Piemonte</a></li>
+			<li><a href="Lyon.html">Lyon</a></li>
+			<li><a href="Rhone.html">Rhone</a></li>
+            <li><a href="Provence.html">Provence</a></li>
+			<li><a href="Avignon.html">Avignon</a></li>
+			<li><a href="Paris2.html">Paris</a></li>
+        </ul>
+            <div id="sidebar-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+        </div>
+    <!--    tabs----------------------------------------------------------->
+    
+    <aside role="complementary" class="languages">
+    <h3>May</h3>
+     <div id="tabContainer">
+        <div id="tabs">
+          <ul>
+            <li id="tab1"><a href="#tabPanel1">20</a></li>
+            <li id="tab2"><a href="#tabPanel2">21</a></li>
+            <li id="tab3"><a href="#tabPanel3">22</a></li>
+            <li id="tab3"><a href="#tabPanel4">23</a></li>
+            <li id="tab3"><a href="#tabPanel5">24</a></li>
+          </ul>
+        </div>
+        <div id="containers">
+            <div id="tabPanel1">
+                <h5><a href="https://www.lesroullets.com/welcome/">6pm - Check-in Domaine Les Roullets</a></h5>
+            </div>
+            <div id="tabPanel2">  
+            </div>
+            <div id="tabPanel3"> 
+                <h5><a href="http://www.bastide-du-tinal.com/en/">3pm - Check-in Bastide du Tinal</a></h5>
+            </div>
+            <div id="tabPanel4">  
+            </div>
+            <div id="tabPanel5">
+                <h5>10am - Leave B&amp;B</h5>
+                
+            </div>
+        </div>
+    </div>
+</aside>
+    
+  <!--java------------------------------------------------------------------>
+<!--    sidebar-->  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script>
+
+	$(document).ready(function(){
+		$('#sidebar-btn').click(function(){
+			$('#sidebar').toggleClass('visible');
+		});
+	});
+
+        
+         //tabbed panels
+
+// declare globals to hold all the links and all the panel elements
+var tabLinks;
+var tabPanels;
+
+window.onload=function() {
+    // when the page loads, grab the li elements
+    tabLinks = document.getElementById("tabs").getElementsByTagName("li");
+	// Now get all the tab panel container divs
+	tabPanels = document.getElementById("containers").getElementsByTagName("div");
+	
+	// activate the _first_ one
+    displayPanel(tabLinks[0]);
+   
+    // attach event listener to links using onclick and onfocus, fire the displayPanel function, return false to disable the link
+    for (var i = 0; i < tabLinks.length; i++) {
+        tabLinks[i].onclick = function() { 
+			displayPanel(this); 
+			return false;
+		}
+        tabLinks[i].onfocus = function() { 
+			displayPanel(this); 
+			return false;
+		}
+    }
+}
+
+function displayPanel(tabToActivate) {
+    // go through all the <li> elements
+    for (var i = 0; i < tabLinks.length; i++) {
+        if (tabLinks[i] == tabToActivate) {
+			// if it's the one to activate, change its class
+            tabLinks[i].classList.add("active");
+			// and display the corresponding panel
+			tabPanels[i].style.display = "block";
+        } else {
+			// remove the active class on the link
+        	tabLinks[i].classList.remove("active");
+			// hide the panel
+			tabPanels[i].style.display = "none";
+        }
+	}
+}
+
+	</script>
+	
+        <div id="wrap">
+
+        </div>
+
+    <div id="footer">
+    
+    </div>
+</body>        
+</html>

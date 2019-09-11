@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trip Index</title>
+    <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative|Source+Serif+Pro" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css" >
+    <style>
+    html{
+            background: url(img/NightEiffel.jpg);
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        
+    </style>
+    
+    
+</head>
+<body> 
+        <div id="sidebar">     
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Paris.html">Paris</a></li>
+			<li><a href="Turin.html">Turin</a></li>
+			<li><a href="Piemonte.html">Piemonte</a></li>
+			<li><a href="Lyon.html">Lyon</a></li>
+			<li><a href="Rhone.html">Rhone</a></li>
+            <li><a href="Provence.html">Provence</a></li>
+			<li><a href="Avignon.html">Avignon</a></li>
+			<li><a href="Paris2.html">Paris</a></li>
+        </ul>
+            <div id="sidebar-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+        </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script>
+
+	$(document).ready(function(){
+		$('#sidebar-btn').click(function(){
+			$('#sidebar').toggleClass('visible');
+		});
+	});
+
+	</script>
+	
+        <div id="wrap">
+
+        </div>
+
+    <div id="footer">
+    <a class="flight" href="https://www.norwegian.com/us/my-travels/#/lookup">Flight Info</a>
+    </div>
+</body>        
+</html>

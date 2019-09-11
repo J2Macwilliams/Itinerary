@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Avignon</title>
+    <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative|Source+Serif+Pro" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css" >
+    <style>
+    html{
+            background: url(img/Avignon.jpg)no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        
+    </style>
+    
+    
+</head>
+<body> 
+    <h1>Avignon</h1>
+        <div id="sidebar">     
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Paris.html">Paris</a></li>
+			<li><a href="Turin.html">Turin</a></li>
+			<li><a href="Piemonte.html">Piemonte</a></li>
+			<li><a href="Lyon.html">Lyon</a></li>
+			<li><a href="Rhone.html">Rhone</a></li>
+            <li><a href="Provence.html">Provence</a></li>
+			<li><a href="Avignon.html">Avignon</a></li>
+			<li><a href="Paris2.html">Paris</a></li>
+        </ul>
+            <div id="sidebar-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+        </div>
+    <!--    tabs----------------------------------------------------------->
+    
+    <aside role="complementary" class="languages">
+    <h3>May</h3>
+     <div id="tabContainer">
+        <div id="tabs">
+          <ul>
+            <li id="tab1"><a href="#tabPanel1">24</a></li>
+            <li id="tab2"><a href="#tabPanel2">25</a></li>
+            <li id="tab3"><a href="#tabPanel3">26</a></li>
+          </ul>
+        </div>
+        <div id="containers">
+            <div id="tabPanel1">
+                <h5><a href="http://www.pontdugard.fr/en">1:00pm - Pont du Gard</a></h5>
+                <h5>4pm - Return Car - Hertz Avignon TGV Station</h5>
+                <h5>5pm - Airbnb Check-in</h5>
+            </div>
+            <div id="tabPanel2">
+                
+            </div>
+            <div id="tabPanel3">
+                <h5>11am - Check-out Airbnb</h5>
+                <h5><a href="https://www.raileurope.com/spip.php?page=sales&re_domain=admin&re_oper=confpage&re_wsbooking=45382729&re_show=overview&step=confirmation">12:40pm - Train to Paris</a></h5>
+            </div>
+            
+        </div>
+    </div>
+</aside>
+    
+  <!--java------------------------------------------------------------------>
+<!--    sidebar-->  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script>
+
+	$(document).ready(function(){
+		$('#sidebar-btn').click(function(){
+			$('#sidebar').toggleClass('visible');
+		});
+	});
+
+        
+         //tabbed panels
+
+// declare globals to hold all the links and all the panel elements
+var tabLinks;
+var tabPanels;
+
+window.onload=function() {
+    // when the page loads, grab the li elements
+    tabLinks = document.getElementById("tabs").getElementsByTagName("li");
+	// Now get all the tab panel container divs
+	tabPanels = document.getElementById("containers").getElementsByTagName("div");
+	
+	// activate the _first_ one
+    displayPanel(tabLinks[0]);
+   
+    // attach event listener to links using onclick and onfocus, fire the displayPanel function, return false to disable the link
+    for (var i = 0; i < tabLinks.length; i++) {
+        tabLinks[i].onclick = function() { 
+			displayPanel(this); 
+			return false;
+		}
+        tabLinks[i].onfocus = function() { 
+			displayPanel(this); 
+			return false;
+		}
+    }
+}
+
+function displayPanel(tabToActivate) {
+    // go through all the <li> elements
+    for (var i = 0; i < tabLinks.length; i++) {
+        if (tabLinks[i] == tabToActivate) {
+			// if it's the one to activate, change its class
+            tabLinks[i].classList.add("active");
+			// and display the corresponding panel
+			tabPanels[i].style.display = "block";
+        } else {
+			// remove the active class on the link
+        	tabLinks[i].classList.remove("active");
+			// hide the panel
+			tabPanels[i].style.display = "none";
+        }
+	}
+}
+
+	</script>
+	
+        <div id="wrap">
+
+        </div>
+
+    <div id="footer">
+    <div class="airbnb-embed-frame" data-id="12865946" data-view="home" style="width:450px;height:300px;margin:auto"><a href="https://www.airbnb.com/rooms/12865946?s=51">View On Airbnb</a><a href="https://www.airbnb.com/rooms/12865946?s=51" rel="nofollow">Charmant T2 Avignon Intra-Muros</a><script async="" src="https://www.airbnb.com/embeddable/airbnb_jssdk"></script></div>
+    </div>
+</body>        
+</html>

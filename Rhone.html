@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rhone</title>
+    <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative|Source+Serif+Pro" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css" >
+    <style>
+    html{
+            background: url(img/Rhone.JPG)no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        
+    </style>
+    
+    
+</head>
+<body> 
+    <h1>Rhone Valley</h1>
+        <div id="sidebar">     
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Paris.html">Paris</a></li>
+			<li><a href="Turin.html">Turin</a></li>
+			<li><a href="Piemonte.html">Piemonte</a></li>
+			<li><a href="Lyon.html">Lyon</a></li>
+			<li><a href="Rhone.html">Rhone</a></li>
+            <li><a href="Provence.html">Provence</a></li>
+			<li><a href="Avignon.html">Avignon</a></li>
+			<li><a href="Paris2.html">Paris</a></li>
+        </ul>
+            <div id="sidebar-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+        </div>
+    <!--    tabs----------------------------------------------------------->
+    
+    <aside role="complementary" class="languages">
+    <h3>May</h3>
+     <div id="tabContainer">
+        <div id="tabs">
+          <ul>
+            <li id="tab1"><a href="#tabPanel1">19</a></li>
+            <li id="tab2"><a href="#tabPanel2">20</a></li>
+          </ul>
+        </div>
+        <div id="containers">
+            <div id="tabPanel1"><h5><a href="https://www.citeduchocolat.com/en/">Noon - Cite Du Chocolate</a></h5>
+            <h5><a href="http://www.chateau-lesoliviers.com/en/">4pm - Check-in Chateau Les Oliviers de Salettes</a></h5>
+                <h5>8pm- Dinner</h5>
+            </div>
+            <div id="tabPanel2">
+                <h5>9:30 - Spa Treatment</h5>
+                <h5>Noon - Check-out</h5>
+                <h5><a href="http://www.carrieres-lumieres.com/en">3:30pm - CARRIÈRES DE LUMIÈRES</a></h5>
+                
+            </div>
+            
+        </div>
+    </div>
+</aside>
+    
+  <!--java------------------------------------------------------------------>
+<!--    sidebar-->  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script>
+
+	$(document).ready(function(){
+		$('#sidebar-btn').click(function(){
+			$('#sidebar').toggleClass('visible');
+		});
+	});
+
+        
+         //tabbed panels
+
+// declare globals to hold all the links and all the panel elements
+var tabLinks;
+var tabPanels;
+
+window.onload=function() {
+    // when the page loads, grab the li elements
+    tabLinks = document.getElementById("tabs").getElementsByTagName("li");
+	// Now get all the tab panel container divs
+	tabPanels = document.getElementById("containers").getElementsByTagName("div");
+	
+	// activate the _first_ one
+    displayPanel(tabLinks[0]);
+   
+    // attach event listener to links using onclick and onfocus, fire the displayPanel function, return false to disable the link
+    for (var i = 0; i < tabLinks.length; i++) {
+        tabLinks[i].onclick = function() { 
+			displayPanel(this); 
+			return false;
+		}
+        tabLinks[i].onfocus = function() { 
+			displayPanel(this); 
+			return false;
+		}
+    }
+}
+
+function displayPanel(tabToActivate) {
+    // go through all the <li> elements
+    for (var i = 0; i < tabLinks.length; i++) {
+        if (tabLinks[i] == tabToActivate) {
+			// if it's the one to activate, change its class
+            tabLinks[i].classList.add("active");
+			// and display the corresponding panel
+			tabPanels[i].style.display = "block";
+        } else {
+			// remove the active class on the link
+        	tabLinks[i].classList.remove("active");
+			// hide the panel
+			tabPanels[i].style.display = "none";
+        }
+	}
+}
+
+	</script>
+	
+        <div id="wrap">
+
+        </div>
+
+    <div id="footer">
+    
+    </div>
+</body>        
+</html>
